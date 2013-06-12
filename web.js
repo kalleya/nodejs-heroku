@@ -5,7 +5,12 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-  res.render('index', { title: 'The index page!', layout: false })
+  res.render('index.ejs', {
+    title: "anything I want",
+    heading: "hello world",
+    something: "foo bar",
+    layout: false
+  });
 });
 
 var port = process.env.PORT || 5000;
