@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 app.use(express.logger());
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
   res.render('index', { title: 'The index page!', layout: false })
