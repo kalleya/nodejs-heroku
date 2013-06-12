@@ -1,9 +1,11 @@
 var express = require("express");
 var app = express();
 app.use(express.logger());
+app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
+app.get("/", function(req, res){
+	res.render(‘index.ejs’, {
+	layout:false
 });
 
 var port = process.env.PORT || 5000;
